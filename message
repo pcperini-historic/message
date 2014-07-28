@@ -1,3 +1,4 @@
+#!/bin/bash
 usage="$(basename "$0") [-h] [recipient message] -- sends a message to the receipient via iMessage"
 
 while getopts ':hs:' option; do
