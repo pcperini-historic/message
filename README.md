@@ -8,4 +8,5 @@ Usage:
 $ message Ryan "Move the meeting back an hour."
 $ message Bill $SOMETHING_ABOUT_TEAPOTS
 $ run_long_proc; message hubot "ping" &
+$ message hubot "echo `proc_with_output`" &
 ```
