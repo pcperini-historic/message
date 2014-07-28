@@ -1,0 +1,17 @@
+usage="$(basename "$0") [-h] [recipient message] -- sends a message to the receipient via iMessage"
+
+while getopts ':hs:' option; do
+  case "$option" in
+    h) echo "$usage"
+       exit
+       ;;
+   \?) printf "illegal option: -%s\n" "$OPTARG" >&2
+       echo "$usage" >&2
+       exit 1
+       ;;
+  esac
+done
+shift $((OPTIND - 1))
+
+applescript="tell application \"Messages\" to send \"$2\" to buddy \"$1\""
+osascript -e "${applescript}"
